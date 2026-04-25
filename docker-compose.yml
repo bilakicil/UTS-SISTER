@@ -1,0 +1,21 @@
+services:
+  aggregator:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - aggregator_data:/app/data
+    restart: always
+
+  publisher:
+    image: python:3.11-slim
+    depends_on:
+      - aggregator
+    volumes:
+      - ./src/publisher_script.py:/app/publisher_script.py
+    working_dir: /app
+    command: >
+      sh -c "pip install requests && python publisher_script.py"
+
+volumes:
+  aggregator_data:
