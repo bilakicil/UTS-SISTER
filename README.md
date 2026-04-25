@@ -115,7 +115,7 @@ Contoh response:
 ```json
 {
   "status": "accepted",
-  "event_id": "evt-001"
+  "event_id": "Temt_01"
 }
 ```
 
@@ -158,13 +158,13 @@ Contoh response:
 
 ```json
 {
-  "topic": "sensor",
+  "topic": "suhu_ruangan",
   "events": [
     [
       "sensor",
-      "evt-001",
+      "Temt_01",
       "2026-04-25T10:00:00+00:00",
-      "device-a",
+      "sensor-01",
       "{'temp': 25}"
     ]
   ]
